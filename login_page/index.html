@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hospital Database Management System - Login</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<div class="container">
+		<h2>Login</h2>
+		<form id="loginForm">
+			<label for="username">Username:</label><br>
+	<input type="text" id="username" name="username"><br>
+		<label for="password">Password:</label><br>
+		<input type="password" id="password" name="password"><br>
+		<label for="roles">Role:</label><br>
+		<select name="role" id="roles">
+			<option value="doctor">Doctor</option>
+			<option value="patient">Patient</option>
+			<option value="receptionist">Receptionist</option>
+			<option value="staff">Staff</option>
+		</select><br>
+		<input type="submit" value="Log In">
+	</form>
+</div>
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+	event.preventDefault();
+	var role = document.getElementById("roles").value;
+	if (role === "doctor") {
+		window.location.href = "../doctor_page/doctor.html";
+	} else if (role === "patient") {
+		window.location.href = "../patient_page/patient.html";
+	} else if (role === "receptionist") {
+		window.location.href = "../receptionist_page/receptionist.html";
+	} else if (role === "staff") {
+		window.location.href = "../staff_page/staff.html";
+	}
+});
+</script>
+</body>
+</html>
